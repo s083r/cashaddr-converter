@@ -5,5 +5,5 @@ COPY . .
 RUN go install github.com/schancel/cashaddr-converter/cmd/svc
 FROM alpine
 COPY --from=0 /go/bin/svc /svc
-COPY --from=0 /go/src/github.com/schancel/cashaddr-converter/static /static
+#COPY --from=0 /go/src/github.com/schancel/cashaddr-converter/static /static
 CMD ["/svc"]
